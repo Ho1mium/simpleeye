@@ -12,7 +12,9 @@ e.qy.kim:8899/e_e  。  resolveconfig可以自定义域名解析记录，blackli
 
 
 resolveconfig={"e.qy.kim":"1.63.65.182"#这里可以配置一个服务器的ip,'qy.kim':"1.63.65.182"}
+
 allowkeys=["e_e"]
+
 blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
 
 
@@ -37,8 +39,8 @@ Approximate round trip times in milli-seconds:
 
 3,然后访问 http://e.qy.kim:8899/e_e 
 
-web 页面内容：
---
+web内容如下
+————
 dns
 
 to weblog
@@ -73,7 +75,7 @@ HTTP access   http://e.qy.kim:8899/jndi_oob_exploit
 view access log http://e.qy.kim:8899/e_e 
 
 web content
---
+————
 dns
 
 to weblog

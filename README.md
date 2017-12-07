@@ -84,12 +84,16 @@ web content
 dns
 
 to weblog
+
 test.qy.kim. 2017_12_07 03:16
+
 **************************************************
 to dns
 
+
 weblog
 /e_e 2017_12_07 03:17
+
 /jndi_oob_exploit 2017_12_07 03:17
 
 --

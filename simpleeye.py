@@ -118,12 +118,7 @@ class DNSServer(object):
                         _ = DNSQuery(data)
                         if _._query.strip(".") in resolveconfig.keys():
                             #ddns
-                            if  _._query.strip(".")=="x.qyc.kim":
-                                ip=socket.gethostbyname("1g4865338u.iok.la")
-                                ip="45.32.211.78"
-                                self._socket.sendto(_.response(ip), addr)
-                            else:
-                                self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)
+                            self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)
                         else:
                             self._socket.sendto(_.response("127.0.0.1"), addr)
 

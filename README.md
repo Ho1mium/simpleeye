@@ -60,8 +60,10 @@ English:
 
 #specify ip to  reserved  domins  
 resolveconfig={"e.qy.kim":"1.63.65.182",'qy.kim':"1.63.65.182"}
+
 #access key
 allowkeys=["e_e"]
+
 blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
 
 

@@ -73,8 +73,11 @@ blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
 usage  
 
 ping test.qy.kim
+
 HTTP access   http://e.qy.kim:8899/jndi_oob_exploit
+
 view access log http://e.qy.kim:8899/e_e 
+
 
 web content
 ————

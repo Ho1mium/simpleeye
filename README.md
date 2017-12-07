@@ -3,9 +3,13 @@ A  simple blind exploit tool( a dns server and a web app)  thant all in one pyth
 
 
 单个python文件的cloudeeye 实现,支持http协议和dns协议 方式 进行 oob攻击；
+
 首先在dns域名注册出自定义dns，填写自己的服务器公网ip，然后有几个配置项：
+
 allowkeys web方式访问本服务的key,默认情况如果当前主机域名是e.qy.kim,那么web查看log地址是
+
 e.qy.kim:8899/e_e  。  resolveconfig可以自定义域名解析记录，blacklist可以配置黑名单域名（系统不会记录解析这些域名的记录）。
+
 
 resolveconfig={"e.qy.kim":"1.63.65.182"#这里可以配置一个服务器的ip,'qy.kim':"1.63.65.182"}
 allowkeys=["e_e"]
@@ -48,13 +52,18 @@ weblog
 
 --
 
+
 +++++++++++++++++++++
+English:
 
 #specify ip to  reserved  domins  
 resolveconfig={"e.qy.kim":"1.63.65.182",'qy.kim':"1.63.65.182"}
 #access key
 allowkeys=["e_e"]
 blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
+
+
+
 
 
 usage  

@@ -10,7 +10,7 @@
      ```resolveconfig```可以自定义域名解析记录，```blacklist```可以配置黑名单域名（系统不会记录解析这些域名的记录）。
 
     ```python
-    Allveconfig={"e.qy.kim":"1.63.65.182",'qy.kim':"1.63.65.182"}
+    resolveconfig={"e.qy.kim":"1.63.65.182",'qy.kim':"1.63.65.182"}
     
     allowkeys=["e_e"] 
     

@@ -1,7 +1,7 @@
 # What is SimpleEye
     A simple blind exploit tool( a dns server and a web app) thant all in one python file
 
-* 单个python文件的cloudeye 实现,支持http协议和dns协议 方式 进行 oob攻击；
+* 单个python文件的cloudeye 实现,支持http协议和dns协议 方式 进行 OOB(out of bound)攻击；
 
 * 首先在dns域名注册出自定义dns，填写自己的服务器公网ip，然后有几个配置项：
 
@@ -35,7 +35,7 @@
 
     ```test.qy.kim. 2017_12_07 03:16```
 
-web访问记录如下:
+* web访问记录如下:
 ```
 weblog /e_e 2017_12_07 03:17 /jndi_oob_exploit 2017_12_07 03:17```
 

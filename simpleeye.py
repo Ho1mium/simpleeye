@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-#author kernel_dbg
+
 """
+author kernel_dbg
 """
 
 import os
@@ -20,12 +21,12 @@ import subprocess
 
 
 
-resolveconfig={"e.youdns.top":"145.76.62.242",'youdns.top':"145.76.62.242"}
+resolveconfig={"e.yourdns.top":"45.176.62.242",'yourdns.top':"45.176.62.242"}
 allowkeys=["e_e"]
 mutex=threading.Lock()
 querylogs=[]
 accesslog=[]
-blacklist=["x.youdns.top","e.youdns.top","ns1.youdns.top","ns2.youdns.top"]
+blacklist=["x.yourdns.top","e.yourdns.top","ns1.yourdns.top","ns2.yourdns.top"]
 class DNSQuery(object):
     """
     Used for making fake DNS resolution responses based on received
@@ -118,15 +119,13 @@ class DNSServer(object):
 
                         _ = DNSQuery(data)
                         if _._query.strip(".") in resolveconfig.keys():
-                            #ddns
-                            '''
-                            if  _._query.strip(".")=="x.youdns.top":
-                                ip=socket.gethostbyname"(38u.iok.la")
-                                ip="145.1.211.78"
+                            if  _._query.strip(".")=="x.yourdns.top":
+                                ip=socket.gethostbyname("38u.ddns.com")
+                                ip="115.1.211.78"
                                 self._socket.sendto(_.response(ip), addr)
                             else:
                                 self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)
-                            '''
+                            
                         else:
                             #print  str(self._socket)
                             self._socket.sendto(_.response("127.0.0.1"), addr)

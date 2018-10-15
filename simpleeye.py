@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 """
-author Kernel_dbg
+Copyright (c) 2006-2015 sqlmap developers (http://sqlmap.org/)
+See the file 'doc/COPYING' for copying permission
 """
 
 import os
@@ -20,14 +21,13 @@ import BaseHTTPServer
 import subprocess
 
 
-#specify ip to  reserved  domins  
-resolveconfig={"e.qy.kim":"1.63.65.182",'qy.kim':"1.63.65.182"}
-#access key
+
+resolveconfig={"e.dnsxx.top":"45.76.62.242",'dnsxx.top':"45.76.62.242"}
 allowkeys=["e_e"]
 mutex=threading.Lock()
 querylogs=[]
 accesslog=[]
-blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
+blacklist=["x.dnsxx.top","e.dnsxx.top","ns1.dnsxx.top","ns2.dnsxx.top"]
 class DNSQuery(object):
     """
     Used for making fake DNS resolution responses based on received
@@ -115,15 +115,26 @@ class DNSServer(object):
 
                     try:
                         data, addr = self._socket.recvfrom(1024)
+                        print addr
+
+
                         _ = DNSQuery(data)
                         if _._query.strip(".") in resolveconfig.keys():
                             #ddns
-                            self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)
+                            '''
+                            if  _._query.strip(".")=="x.dnsxx.top":
+                                ip=socket.gethostbyname"(38u.iok.la")
+                                ip="45.1.211.78"
+                                self._socket.sendto(_.response(ip), addr)
+                            else:
+                                self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)
+                            '''
                         else:
+                            #print  str(self._socket)
                             self._socket.sendto(_.response("127.0.0.1"), addr)
 
                         with self._lock:
-                            self._requests.append(_._query)
+                            self._requests.append([_._query,addr[0]])
                     except Exception,e:
                         print e
             except KeyboardInterrupt:
@@ -143,7 +154,8 @@ def startweblistenner():
             url=self.path
             global mutex,accesslog,querylogs
             mutex.acquire()
-            accesslog.append("%s\t%s" % (url, time.strftime("%Y_%m_%d %H:%M")))
+            if url[1:] not in allowkeys:
+                accesslog.append("%s\t%s" % (url, time.strftime("%Y_%m_%d %H:%M")))
             if len([accesslog]) > 100:
                 accesslog = accesslog[-100:]
             mutex.release()
@@ -210,12 +222,15 @@ if __name__ == "__main__":
                 else:
                     #global mutex,querylogs
                     #mutex.acquire()
-                    if _.strip('.') not in blacklist:
-                        querylogs.append("%s\t%s"%(_,time.strftime("%Y_%m_%d %H:%M")))
+                    if _[0].strip('.') not in blacklist:
+                        t="-----------".join(_)+"-----------"+time.strftime("%Y_%m_%d %H:%M")
+                        if t not in querylogs:
+                            querylogs.append(t)
                         if len([querylogs])>200:
                             querylogs=querylogs[-200:]
                         #mutex.release()
                         print "[i] %s" % _
+                #querylogs=list(set(querylogs))
 
             time.sleep(1)
 

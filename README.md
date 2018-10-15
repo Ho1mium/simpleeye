@@ -1,5 +1,5 @@
 # What is SimpleEye
-    A simple blind exploit tool( a dns server and a web app) thant all in one python file
+    A simple blind exploit tool( a dns server and a web app) that all in one python file
 
 * 单个python文件的cloudeye 实现,支持http协议和dns协议 方式 进行 OOB(out of bound)攻击；
 

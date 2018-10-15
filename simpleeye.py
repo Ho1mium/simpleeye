@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#author kernel_dbg
 """
 Copyright (c) 2006-2015 sqlmap developers (http://sqlmap.org/)
 See the file 'doc/COPYING' for copying permission
@@ -22,12 +22,12 @@ import subprocess
 
 
 
-resolveconfig={"e.dnsxx.top":"45.76.62.242",'dnsxx.top':"45.76.62.242"}
+resolveconfig={"e.youdns.top":"145.76.62.242",'youdns.top':"145.76.62.242"}
 allowkeys=["e_e"]
 mutex=threading.Lock()
 querylogs=[]
 accesslog=[]
-blacklist=["x.dnsxx.top","e.dnsxx.top","ns1.dnsxx.top","ns2.dnsxx.top"]
+blacklist=["x.youdns.top","e.youdns.top","ns1.youdns.top","ns2.youdns.top"]
 class DNSQuery(object):
     """
     Used for making fake DNS resolution responses based on received
@@ -122,9 +122,9 @@ class DNSServer(object):
                         if _._query.strip(".") in resolveconfig.keys():
                             #ddns
                             '''
-                            if  _._query.strip(".")=="x.dnsxx.top":
+                            if  _._query.strip(".")=="x.youdns.top":
                                 ip=socket.gethostbyname"(38u.iok.la")
-                                ip="45.1.211.78"
+                                ip="145.1.211.78"
                                 self._socket.sendto(_.response(ip), addr)
                             else:
                                 self._socket.sendto(_.response(resolveconfig[_._query.strip(".")]), addr)

@@ -1,8 +1,9 @@
-# What is SimpleEye
-    A simple blind exploit tool( a dns server and a web app) that all in one python file
 
-* 单个python文件的cloudeye 实现,支持http协议和dns协议 方式 进行 OOB(out of bound)攻击；
+#中文
+## 什么是 SimpleEye？    
+    单个python文件的cloudeye 实现,支持http协议和dns协议方式进行 OOB(out of bound)攻击。
 
+##配置
 * 首先在dns域名注册出自定义dns，填写自己的服务器公网ip，然后有几个配置项：
 
     * allowkeys web方式访问本服务的key,默认情况如果当前主机域名是e.qy.kim,那么web查看log地址是
@@ -16,8 +17,14 @@
     
     blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]```
 
-* 如果域名是qy.kim，使用方式如下：
-*  第一步 ```ping test.qy.kim```
+* 举个例子，如果你注册的域名是qy.kim，使用方式如下：
+* 配置自定义dns，指向你自己域名服务器所在的IP地址。然后在域名服务器上执行如下命令启动dns服务。
+    ```shell
+nohup python simpleeye.py >log.txt&
+    ```
+
+##使用举例
+* 第一步 ```ping test.qy.kim```
 
     ```shell
     PS C:\Users\maocz> ping test.qc.kim
@@ -31,9 +38,9 @@
 
 * 然后访问 ```http://e.qy.kim:8899/e_e```
 
-* dns记录内容如下：
+* dns记录会有如下记录内容如下，其中122.22.22.22 是发起dns查询的主机ip：
 
-    ```test.qy.kim. 2017_12_07 03:16```
+    ```test.qy.kim.  122.22.22.22   2017_12_07 03:16```
 
 * web访问记录如下:
 ```
@@ -45,7 +52,11 @@ weblog /e_e 2017_12_07 03:17 /jndi_oob_exploit 2017_12_07 03:17
 
 
 
-# Eglish:
+
+
+# Eglish
+## What is SimpleEye？
+    A simple blind exploit tool( a dns server and a web app) that all in one python file。
 
 * specify ip to reserved domins
     
@@ -57,8 +68,10 @@ weblog /e_e 2017_12_07 03:17 /jndi_oob_exploit 2017_12_07 03:17
     blacklist=["x.qy.kim","e.qy.kim","ns1.qy.kim","ns2.qy.kim"]
     
     ```
-# usage
-* First:
+
+## usage
+
+* First
 ```shell
 ping test.qy.kim
 ```

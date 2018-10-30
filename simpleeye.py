@@ -156,7 +156,7 @@ def startweblistenner():
             if len([accesslog]) > 100:
                 accesslog = accesslog[-100:]
             mutex.release()
-            if len([querylogs]) > 100:
+            if len(querylogs) > 100:
                 querylogs = querylogs[-100:]
                 # mutex.release()
             self.send_response(200)

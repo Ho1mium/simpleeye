@@ -1,9 +1,9 @@
 
-#中文
+# 中文
 ## 什么是 SimpleEye？    
     单个python文件的cloudeye 实现,支持http协议和dns协议方式进行 OOB(out of bound)攻击。
 
-##配置
+## 配置
 * 首先在dns域名注册出自定义dns，填写自己的服务器公网ip，然后有几个配置项：
 
     * allowkeys web方式访问本服务的key,默认情况如果当前主机域名是e.qy.kim,那么web查看log地址是
@@ -23,7 +23,7 @@
 nohup python simpleeye.py >log.txt&
     ```
 
-##使用举例
+## 使用举例
 * 第一步 ```ping test.qy.kim```
 
     ```shell

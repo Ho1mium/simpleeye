@@ -19,8 +19,7 @@
 
 * 举个例子，如果你注册的域名是qy.kim，使用方式如下：
 * 配置自定义dns，指向你自己域名服务器所在的IP地址。然后在域名服务器上执行如下命令启动dns服务。
-    ```shell
-nohup python simpleeye.py >log.txt&
+    ```nohup python simpleeye.py >log.txt&
     ```
 
 ## 使用举例

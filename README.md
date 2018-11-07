@@ -25,7 +25,7 @@
     
 
 ## 使用举例
-* 第一步 ```ping test.qy.kim```
+* dns记录方式举例， 执行ping命令来查询```ping test.qy.kim```
 
     ```shell
     PS C:\Users\maocz> ping test.qc.kim
@@ -35,9 +35,9 @@
     Ping statistics for 127.0.0.1: Packets: Sent = 1, Received = 1, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms
     ```
 
-* 第二步,```http://e.qy.kim:8899/jndi_oob_exploit```
+* url记录方式举例,访问url```http://e.qy.kim:8899/jndi_oob_exploit```
 
-* 然后访问 ```http://e.qy.kim:8899/e_e```
+*最后我们访问控台查看记录 ```http://e.qy.kim:8899/e_e```
 
 * dns记录会有如下记录内容如下，其中122.22.22.22 是发起dns查询的主机ip：
 
@@ -74,22 +74,22 @@ weblog /e_e 2017_12_07 03:17 /jndi_oob_exploit 2017_12_07 03:17
 
 ## usage
 
-* First
+* by dns :using ping command to add a dns record
 ```shell
 ping test.qy.kim
 ```
 
-* then HTTP access 
+* by url : visite the following url
   ```http://e.qy.kim:8899/jndi_oob_exploit```
 
-* At Last view access log
+* At Last view access log  from console
 ```http://e.qy.kim:8899/e_e```
 
-* DNS records
+* DNS records will be below for example.
 
     ```test.qy.kim. 2017_12_07 03:16```
 
-* Web access log
+* View Web access log from console
 
     ```
     /e_e 2017_12_07 03:17
